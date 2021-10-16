@@ -16,6 +16,7 @@ export class AppComponent {
 
   
   showResults() {
+    if(parseInt(window.getComputedStyle(this.result.nativeElement,null).getPropertyValue("opacity")) === 1) return;
     if(!this.tl.isActive()){
       this.tl
       .fromTo(this.form.nativeElement,{x: 0, duration: 1}, {x: -125} )
